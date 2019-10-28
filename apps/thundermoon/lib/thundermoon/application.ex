@@ -9,7 +9,17 @@ defmodule Thundermoon.Application do
     children = [
       Thundermoon.Repo,
       Thundermoon.ChatMessages,
-      Thundermoon.CounterRealmSupervisor
+      Thundermoon.CounterRealmSupervisor,
+      %{
+        id: Thundermoon.GameOfLife,
+        start:
+          {Sim.RealmSupervisor, :start_link, [Thundermoon.GameOfLife, ThundermoonWeb.Endpoint]}
+      },
+      %{
+        id: Thundermoon.LotkaVolterra,
+        start:
+          {Sim.RealmSupervisor, :start_link, [Thundermoon.LotkaVolterra, ThundermoonWeb.Endpoint]}
+      }
     ]
 
     Supervisor.start_link(children, strategy: :one_for_one, name: Thundermoon.Supervisor)
