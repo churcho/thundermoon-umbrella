@@ -48,7 +48,7 @@ defmodule ThundermoonWeb.MixProject do
       {:thundermoon, in_umbrella: true},
       {:sim, in_umbrella: true},
       {:jason, "~> 1.1"},
-      {:poison, "~> 3.1"},
+      {:poison, "~> 4.0.1"},
       {:plug_cowboy, "~> 2.1"},
       {:ueberauth, "~> 0.6"},
       {:ueberauth_github, "~> 0.8.0"},
@@ -58,7 +58,7 @@ defmodule ThundermoonWeb.MixProject do
       {:observer_cli, "~> 1.5"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:floki, "~> 0.26.0", only: :test},
-      {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.4.0", only: [:dev, :test], runtime: false}
     ]
   end
 
